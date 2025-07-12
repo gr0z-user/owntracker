@@ -1,4 +1,5 @@
 # Используем официальный образ TinyTrak
-FROM alexell/tinytrac-lite:latest
+# Используем совместимый и публичный образ
+FROM j6s/tinytrac:latest
 
 # Можно оставить пустым — настройки будут передаваться через env
