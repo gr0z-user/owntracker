@@ -1,4 +1,4 @@
 # Используем официальный образ TinyTrak
-FROM ghcr.io/joosts/tinytrak:latest
+FROM alexell/tinytrac-lite:latest
 
 # Можно оставить пустым — настройки будут передаваться через env
