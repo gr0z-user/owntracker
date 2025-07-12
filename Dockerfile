@@ -1,4 +1,3 @@
-version: '3'
 services:
   recorder:
     image: owntracks/recorder
