@@ -1,0 +1,38 @@
+services:
+  recorder:
+    type: web
+    name: owntracks-recorder
+    env: docker
+    image: owntracks/recorder
+    plan: free # или "starter" для production
+    envVars:
+      - key: OTR_HOST
+        value: kebnekaise.lmq.cloudamqp.com
+      - key: OTR_PORT
+        value: "1883"
+      - key: OTR_USER
+        value: ""
+      - key: OTR_PASS
+        value: ""
+      - key: OTR_HTTPHOST
+        value: "0.0.0.0"
+      - key: OTR_HTTPPORT
+        value: "8083"
+    healthCheckPath: /status
+    port: 8083
+
+  frontend:
+    type: web
+    name: owntracks-frontend
+    env: docker
+    image: owntracks/frontend
+    plan: free
+    envVars:
+      - key: OT_WEB_TITLE
+        value: "OwnTracks Map"
+      - key: OT_API_KEY
+        value: "ваш_api_key"
+      - key: OT_API_URL
+        value: http://recorder:8083
+    healthCheckPath: /
+    port: 80
