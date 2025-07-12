@@ -1,5 +1,2 @@
-# Используем официальный образ TinyTrak
-# Используем совместимый и публичный образ
-FROM j6s/tinytrac:latest
-
+FROM ghcr.io/owntracks/ttnmap:latest
 # Можно оставить пустым — настройки будут передаваться через env
